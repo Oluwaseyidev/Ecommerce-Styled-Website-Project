@@ -1,2 +1,2 @@
 # Ecommerce-Styled-Website-Project
-this is mine
+This is an online bookstore that offers a wide selection of books across every genre, from thrilling fiction and inspiring self-help to educational textbooks and children’s favorites. We provide a simple, reliable shopping experience with fast delivery, secure payments, and detailed book descriptions to help you choose the perfect read. Whether you're expanding your personal library or searching for the ideal gift, our bookstore makes discovering great books easy and enjoyable. Thanks.
