@@ -2,44 +2,51 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "poppins";
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   display: flex;
   background: linear-gradient(to right, yellow, orange);
   justify-content: space-between;
-  height: 60px;
-  padding: 5px;
+  min-height: 60px;
+  padding: 10px 15px;
   margin-bottom: 10px;
   border-bottom: 1px black solid;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .logo-container {
   display: flex;
-  flex-direction: column;
-
   align-items: center;
-  margin-left: 20px;
+  gap: 10px;
 }
 
 .logo1 {
   width: 30px;
-  /* height: 40px; */
+  height: auto;
 }
 
 .logo-text {
   font-size: 15px;
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", sans-serif;
+  white-space: nowrap;
 }
 
 .listed {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 500px;
+  display: flex;
+  gap: 15px;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .listed a {
@@ -47,11 +54,184 @@
   text-decoration: none;
   color: rgb(97, 95, 95);
   position: relative;
-  font-size: 25px;
+  font-size: 18px;
   transition: 0.5s;
+  padding: 5px 10px;
 }
 
 .listed a:hover {
   border-bottom: 2px solid red;
   color: rgb(255, 253, 208);
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+section > p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+section > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0;
+}
+
+article {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+article h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+article img {
+  width: 130px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+article p {
+  margin-bottom: 10px;
+}
+
+article a {
+  display: inline-block;
+  margin-top: auto;
+  padding: 8px 20px;
+  background: linear-gradient(to right, yellow, orange);
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+article a:hover {
+  background: linear-gradient(to right, orange, yellow);
+  transform: scale(1.05);
+}
+
+footer {
+  background: linear-gradient(to right, yellow, orange);
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  border-top: 1px solid black;
+}
+
+/* Small screens (phones) */
+@media (max-width: 576px) {
+  .header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .logo-text {
+    font-size: 14px;
+  }
+
+  .listed {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .listed a {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  section > ul {
+    grid-template-columns: 1fr;
+  }
+
+  article img {
+    width: 110px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 577px) and (max-width: 992px) {
+  .listed a {
+    font-size: 20px;
+  }
+
+  section > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main {
+    padding: 20px 30px;
+  }
+}
+
+/* Large screens (laptops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .listed a {
+    font-size: 22px;
+  }
+
+  section > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra large screens (desktops) */
+@media (min-width: 1201px) {
+  .listed a {
+    font-size: 25px;
+  }
+
+  section > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  main {
+    padding: 30px 50px;
+  }
 }

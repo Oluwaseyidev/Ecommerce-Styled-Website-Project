@@ -20,7 +20,6 @@
 .logo-container {
   display: flex;
   flex-direction: column;
-
   align-items: center;
   margin-left: 20px;
 }
@@ -56,6 +55,3 @@
   color: rgb(255, 253, 208);
 }
 
-.main {
-  margin-top: 100px;
-}
