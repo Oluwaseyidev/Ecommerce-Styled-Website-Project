@@ -11,57 +11,164 @@ body {
   flex-direction: column;
 }
 
+.hero-img {
+  height: 100vh;
+  width: 100%;
+}
+
+.hero-container {
+  position: relative;
+}
+
+.hero-text-container {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  left: 10%;
+}
+
+.floating-quote {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  font-size: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: float 8s ease-in-out infinite alternate;
+  z-index: 8;
+}
+
+.intro {
+  -webkit-text-stroke: 2px rgb(224, 157, 33);
+  color: transparent;
+  font-size: 100px;
+  padding: 10px 30px;
+  transition: 0.5;
+  font-family: "poppins", sans-serif;
+  z-index: 2;
+}
+
+.intro:hover {
+  color: rgb(224, 157, 33);
+}
+
+.shadow {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.listed li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listed li:hover {
+  background-color: rgba(250, 245, 245, 0.2);
+  border-radius: 10px;
+  a {
+    font-size: 30px;
+  }
+
+  a::after {
+    content: "";
+    background: rgb(201, 158, 78);
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .tooltip {
+    opacity: 1;
+  }
+}
+
 .header {
   display: flex;
-  background: linear-gradient(to right, yellow, orange);
   justify-content: space-between;
-  min-height: 60px;
-  padding: 10px 15px;
+  min-height: 70px;
+
   margin-bottom: 10px;
-  border-bottom: 1px black solid;
+
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  flex-direction: row;
+  right: 0px;
+  left: 0px;
   flex-wrap: wrap;
-  gap: 10px;
+  position: fixed;
 }
 
 .logo-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  margin-left: 40px;
+  margin-top: 10px;
 }
 
 .logo1 {
-  width: 30px;
+  width: 70px;
   height: auto;
 }
 
 .logo-text {
-  font-size: 15px;
+  font-size: 17px;
+  color: azure;
   font-family: "Trebuchet MS", sans-serif;
   white-space: nowrap;
 }
 
 .listed {
   display: flex;
-  gap: 15px;
+  justify-content: center;
   list-style: none;
-  flex-wrap: wrap;
+
+  /*flex-wrap: wrap; */
+  gap: 50px;
+  margin-right: 40px;
+}
+
+.listed li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.au::after {
+  content: "";
+  background: rgb(201, 158, 78);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .listed a {
   display: inline-block;
   text-decoration: none;
-  color: rgb(97, 95, 95);
+  color: whitesmoke;
   position: relative;
-  font-size: 18px;
+  font-size: 20px;
+  flex: 1;
   transition: 0.5s;
+  align-items: center;
+  justify-content: space-between;
   padding: 5px 10px;
-}
-
-.listed a:hover {
-  border-bottom: 2px solid red;
-  color: rgb(255, 253, 208);
 }
 
 main {
@@ -69,14 +176,21 @@ main {
   padding: 20px;
   max-width: 1400px;
   margin: 0 auto;
+  height: 100vh;
   width: 100%;
+}
+
+.main1 {
+  position: sticky;
+  z-index: 99999;
+  background-color: rgb(255, 255, 255);
 }
 
 section {
   margin-bottom: 30px;
 }
 
-h2 {
+.main1 h2 {
   margin-bottom: 15px;
   font-size: 1.8rem;
 }
@@ -162,6 +276,18 @@ footer {
   .logo-container {
     flex-direction: column;
     gap: 5px;
+  }
+
+  .hero-text-container {
+    top: 400px;
+  }
+
+  .floating-quote {
+    margin-top: 110px;
+  }
+
+  .intro {
+    font-size: 60px;
   }
 
   .logo-text {
